@@ -1,7 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Runtime.CompilerServices;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class Player : MonoBehaviour
 {
@@ -11,31 +13,29 @@ public class Player : MonoBehaviour
     private float jumpingPower = 16f;
     private bool isFacingRight = true;
 
-    public float breath = 50f;
+    public static float breath = 50f;
 
     private bool inWater = false;
+
     [SerializeField] private Rigidbody2D rb;
     [SerializeField] private Transform groundCheck;
     [SerializeField] private LayerMask groundLayer;
 
     public int health = 100;
 
-    private void Start()
-    {
-        
-    }
-
-
-    // Start is called before the first frame update
+  
     void Update()
     {
         if (inWater)
         {
-            
+
 
             horizontal = Input.GetAxisRaw("Horizontal");
             vertical = Input.GetAxisRaw("Vertical");
-            rb.velocity = new Vector2(horizontal * speed, vertical*speed);
+            rb.velocity = new Vector2(horizontal * speed, vertical * speed);
+
+            //TIMER SLIDER
+
             breath-=.005f;
             if (breath <= 0)
             {
@@ -43,11 +43,12 @@ public class Player : MonoBehaviour
             }
             Debug.Log(breath);
 
+
         }
         else
         {
 
-            //breath = 30f;
+            breath = 30f;
             horizontal = Input.GetAxisRaw("Horizontal");
             rb.velocity = new Vector2(horizontal * speed, rb.velocity.y);
         }
@@ -66,10 +67,6 @@ public class Player : MonoBehaviour
 
     }
 
-   // private void FixedUpdate()
-    //{
-    //rb.velocity = new Vector2(horizontal * speed, rb.velocity.y);
-    //}
 
     private bool IsGrounded()
     {
