@@ -40,7 +40,7 @@ public class Player : MonoBehaviour
             breath-=.005f;
             if (breath <= 0)
             {
-                SceneManager.LoadScene("SampleScene");
+                SceneManager.LoadScene("GameScene");
             }
             //Debug.Log(breath);
 
