@@ -11,7 +11,7 @@ public class Player : MonoBehaviour
     private float jumpingPower = 16f;
     private bool isFacingRight = true;
 
-    public float breath = 30f;
+    public float breath = 50f;
 
     private bool inWater = false;
     [SerializeField] private Rigidbody2D rb;
@@ -36,7 +36,7 @@ public class Player : MonoBehaviour
             horizontal = Input.GetAxisRaw("Horizontal");
             vertical = Input.GetAxisRaw("Vertical");
             rb.velocity = new Vector2(horizontal * speed, vertical*speed);
-            breath-=.025f;
+            breath-=.005f;
             if (breath <= 0)
             {
                 SceneManager.LoadScene("SampleScene");

@@ -4396,7 +4396,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 159df902108ffb146a060d9e6292326b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  breath: 30
+  breath: 50
   rb: {fileID: 1923054569}
   groundCheck: {fileID: 1528792263}
   groundLayer:
