@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 742811488072003656}
   - component: {fileID: 3289037928279425144}
   - component: {fileID: 7348788035407297060}
-  - component: {fileID: -5578881726013126720}
+  - component: {fileID: 4435007584943207356}
   m_Layer: 0
   m_Name: Coin_video_game
   m_TagString: Untagged
@@ -27,9 +27,9 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1795410068522617268}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -14.34891, y: -2.0424886, z: 9.635006}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.48735, y: 0.48735, z: 0.48735}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -131,7 +131,7 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1.7637701, y: 1.682106}
   m_EdgeRadius: 0
---- !u!114 &-5578881726013126720
+--- !u!114 &4435007584943207356
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -143,3 +143,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5e9608b7136b46e4fa8ce240a349fa53, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  coinText: {fileID: 0}
