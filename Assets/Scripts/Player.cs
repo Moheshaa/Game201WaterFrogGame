@@ -13,7 +13,8 @@ public class Player : MonoBehaviour
     private float jumpingPower = 16f;
     private bool isFacingRight = true;
 
-    public static float breath = 50f;
+    [SerializeField]public float breathMax = 20f;
+    public static float breath;
 
     private bool inWater = false;
 
@@ -41,14 +42,14 @@ public class Player : MonoBehaviour
             {
                 SceneManager.LoadScene("SampleScene");
             }
-            Debug.Log(breath);
+            //Debug.Log(breath);
 
 
         }
         else
         {
 
-            breath = 30f;
+            breath = breathMax;
             horizontal = Input.GetAxisRaw("Horizontal");
             rb.velocity = new Vector2(horizontal * speed, rb.velocity.y);
         }
@@ -85,12 +86,12 @@ public class Player : MonoBehaviour
     }
 
 
-    private void OnCollisionEnter2D(Collision2D collision)
+    private void OnCollisionEnter2D(Collision2D col)
     {
-        if (collision.gameObject.tag == "enemy")
-        {//C
+        if (col.gameObject.tag == "enemy")
+        {
             health = health - 5;
-            Debug.Log(health);
+            //Debug.Log(health);
         }
     }
 
