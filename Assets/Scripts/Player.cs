@@ -88,7 +88,7 @@ public class Player : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D col)
     {
-        if (col.gameObject.tag == "enemy")
+        if (col.gameObject.name == "fish")
         {
             health = health - 5;
             //Debug.Log(health);
