@@ -1,24 +1,25 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-//A PlayerHealth Script needs to be made in order for the below to work. I am just a 3D artist way in over my head who knows Unreal better -o-
-//public class HealthPickUp : MonoBehaviour
-//{
-  //  PlayerHealth playerHealth;
+using UnityEngine.UI;
 
-   // public float healthBonus = 15f;
+public class HealthPickUp : MonoBehaviour
+{
+    Text healthText;
 
-   // void Awake()
-   // {
-    //playerHealth = FindObjectOfType<PlayerHealth>();
-   // }
+    // Start is called before the first frame update
+    void Start()
+    {
+        healthText = GetComponent<Text>();
+    }
 
-  //  private void OnTriggerEnter2D(Collider2D col)
-   // {
-    //    if (playerHealth.curHealth < playerHealth.maxHealth)
-   // {
-   // Destroy(gameObject);
-   // playerHealth.curHealth = playerHealth.curHealth + healthBonus;
-   // }
-   // }
-//}
+    void Update()
+    {
+        //Set the current number of coins to display
+        if (healthText.text != SC_2DCoin.PlayerHealth.ToString())
+        {
+            healthText.text = SC_2DCoin.PlayerHealth.ToString();
+        }
+    }
+
+}
